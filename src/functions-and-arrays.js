@@ -15,9 +15,11 @@ function findLongestWord(words) {
   for (let i = 0; i < words.length; i++) {
     if (words[i].length > wordCounter) {
       wordCounter = words[i];
+      return wordCounter;
+    } else (words.length === 0) {
+      return 0;
     }
-  }    
-  return wordCounter;
+  } 
 }
 
 
@@ -41,13 +43,14 @@ function sum() {}
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
+
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-
 function averageNumbers(numbersAvg) {
-
+  let firstSum = 0;
   let myAverage = 0;
   for (let i = 0; i < numbersAvg.length; i++) {
-    myAverage += (numbersAvg[i] / numbersAvg.length);
+    firstSum += numbersAvg[i];
+    myAverage = firstSum / (numbersAvg.length);
   } 
   return myAverage; 
 }
@@ -85,14 +88,33 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(wordsUnique) {
+  let palabrasUnicas = [];
+  let palabrasDuplicadas = [];
+
+  for (let i = 0; i < wordsUnique.length; i++) {
+      if (palabrasUnicas.includes(wordsUnique[i])) {
+        palabrasDuplicadas.push(wordsUnique[i]);
+        return palabrasDuplicadas;
+    } else {
+      palabrasUnicas.push(wordsUnique[i]);
+      return palabrasUnicas;
+    }
+  }
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arrayOfWords, wordToSearch) {
+  if (arrayOfWords.includes(wordToSearch)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 
 
@@ -111,7 +133,17 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(listOfWords, theSearching) {
+
+  let timesOfRepetition = 0;
+  for (let i = 0; i<listOfWords; i++);
+  if (listOfWords.includes(theSearching)) {
+    timesOfRepetition ++;
+    return timesOfRepetition;
+  } else {
+    return 0;
+  }
+}
 
 
 
